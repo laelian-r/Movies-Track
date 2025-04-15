@@ -1,7 +1,7 @@
 <?php
-namespace ProjetName\Models;
+namespace MoviesTrack\Models;
 
-use ProjetName\Models\Home;
+use MoviesTrack\Models\Home;
 /** Class HomeManager **/
 class HomeManager {
 
@@ -17,8 +17,8 @@ class HomeManager {
     }
 
     public function all() {
-        $stmt = $this->bdd->query('SELECT * FROM table_name');
+        $stmt = $this->bdd->query('SELECT * FROM films');
 
-        return $stmt->fetchAll(\PDO::FETCH_CLASS, "ProjetName\Models\Home");
+        return $stmt->fetchAll(\PDO::FETCH_CLASS, "MoviesTrack\Models\Home");
     }
 }

@@ -1,41 +1,40 @@
 <?php
-namespace ProjetName;
-
-//use App\Controllers\UserController;
-/** Class Router **/
+namespace MoviesTrack;
 
 class Router {
-
-    private $url;
     private $routes = [];
+    private $uri;
 
-    public function __construct($url){
-        $this->url = $url;
+    public function __construct($uri) {
+        $this->uri = $uri;
     }
 
-    public function get($path, $callable) {
-        $route = new Route($path, $callable);
-        $this->routes["GET"][] = $route;
-        return $route;
-    }
-
-    public function post($path, $callable) {
-        $route = new Route($path, $callable);
-        $this->routes["POST"][] = $route;
-        return $route;
+    public function get($path, $action) {
+        $this->routes['GET'][$path] = $action;
     }
 
     public function run() {
-        if(!isset($this->routes[$_SERVER['REQUEST_METHOD']])){
-            throw new \Exception('REQUEST_METHOD does not exist');
-        }
-        foreach($this->routes[$_SERVER['REQUEST_METHOD']] as $route){
-            if($route->match($this->url)){
-                return $route->call();
-            }
-        }
-        // throw new \Exception('No matching routes');
-        require VIEWS . '404.php';
-    }
+        $method = $_SERVER['REQUEST_METHOD'];
+        $path = parse_url($this->uri, PHP_URL_PATH);
 
+        if (isset($this->routes[$method][$path])) {
+            $action = $this->routes[$method][$path];
+            list($controller, $method) = explode('@', $action);
+            $controller = "MoviesTrack\\Controllers\\$controller";
+            if (class_exists($controller)) {
+                $instance = new $controller();
+                if (method_exists($instance, $method)) {
+                    $instance->$method();
+                } else {
+                    http_response_code(500);
+                    echo "Method $method not found in controller $controller.";
+                }
+            } else {
+                http_response_code(500);
+                echo "Controller $controller not found.";
+            }
+        } else {
+            require VIEWS . '404.php';
+        }
+    }
 }

@@ -1,0 +1,9 @@
+{
+    "name": "lalian/movies-track",
+    "autoload": {
+        "psr-4": {
+            "MoviesTrack\\": "src/"
+        }
+    },
+    "require": {}
+}

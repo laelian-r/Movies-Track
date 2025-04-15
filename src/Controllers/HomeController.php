@@ -1,8 +1,8 @@
 <?php
-namespace ProjetName\Controllers;
+namespace MoviesTrack\Controllers;
 
-use ProjetName\Models\HomeManager;
-use ProjetName\Validator;
+use MoviesTrack\Models\HomeManager;
+use MoviesTrack\Validator;
 
 class HomeController {
     private $manager;
@@ -12,11 +12,6 @@ class HomeController {
     }
 
     public function index() {
-        require VIEWS . 'ProjetName/homepage.php';
-    }
-
-    public function viewLink() {
-        // $data = $this->manager->all();
-        require VIEWS . 'ProjetName/link.php';
+        require VIEWS . 'MoviesTrack/homepage.php';
     }
 }

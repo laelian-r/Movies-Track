@@ -1,16 +1,50 @@
 <?php
-namespace ProjetName\Models;
+namespace MoviesTrack\Models;
 
 /** Class Home **/
 class Home {
-    private $name;
+    private $id_film;
+    private $titre;
+    private $description;
+    private $date;
 
-    public function getName() {
-        return $this->name;
+    public function __construct($id_film = null, $titre = null, $description = null, $date = null) {
+        $this->id_film = $id_film;
+        $this->titre = $titre;
+        $this->description = $description;
+        $this->date = $date;
+    }
+    
+    public function getId() {
+        return $this->id_film;
+    }
+
+    public function getTitle() {
+        return $this->titre;
+    }
+
+    public function getDescription() {
+        return $this->description;
+    }
+
+    public function getDate() {
+        return $this->date;
     }
 
 
-    public function setName(String $name) {
-        $this->name = $name;
+    public function getIdFilm() {
+        return $this->id_film;
+    }
+
+    public function setTitle(String $titre) {
+        $this->titre = $titre;
+    }
+
+    public function setDescription(String $description) {
+        $this->description = $description;
+    }
+
+    public function setDate(String $date) {
+        $this->date = $date;
     }
 }

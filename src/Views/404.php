@@ -1,6 +1,8 @@
 <?php
 ob_start();
 
+$title = "Erreur 404";
+
 ?>
 
 <section class="error">

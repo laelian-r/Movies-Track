@@ -1,6 +1,6 @@
 <?php
 
-namespace ProjetName;
+namespace MoviesTrack;
 
 /** Class Validator **/
 class Validator {
