@@ -3,23 +3,27 @@ namespace MoviesTrack\Models;
 
 /** Class Home **/
 class Home {
-    private $id_film;
-    private $titre;
-    private $description;
-    private $date;
+    public $id_film;
+    public $fichier;
+    public $image;
+    public $titre;
+    public $description;
+    public $date;
 
-    public function __construct($id_film = null, $titre = null, $description = null, $date = null) {
-        $this->id_film = $id_film;
-        $this->titre = $titre;
-        $this->description = $description;
-        $this->date = $date;
-    }
-    
-    public function getId() {
+    // Getters
+    public function getIdFilm() {
         return $this->id_film;
     }
 
-    public function getTitle() {
+    public function getFichier() {
+        return $this->fichier;
+    }
+
+    public function getImage() {
+        return $this->image;
+    }
+
+    public function getTitre() {
         return $this->titre;
     }
 
@@ -32,11 +36,19 @@ class Home {
     }
 
 
-    public function getIdFilm() {
-        return $this->id_film;
+    public function setIdFilm(Int $id_film) {
+        $this->id_film = $id_film;
     }
 
-    public function setTitle(String $titre) {
+    public function setFichier(String $fichier) {
+        $this->fichier = $fichier;
+    }
+
+    public function setImage(String $image) {
+        $this->image = $image;
+    }
+
+    public function setTitre(String $titre) {
         $this->titre = $titre;
     }
 
@@ -44,7 +56,7 @@ class Home {
         $this->description = $description;
     }
 
-    public function setDate(String $date) {
+    public function setDate(Date $date) {
         $this->date = $date;
     }
 }

@@ -6,15 +6,29 @@
 
 body {
     font-family: Arial, sans-serif;
+    /* background-image: url('./assets/images/background.jpg'); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    color: white;
+}
+
+.bg {
     background-image: url('./assets/images/background.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100vh;
-    color: white;
+    background-attachment: fixed;
 }
 
 
 /* NAVBAR */
+
+header {
+    background-color: rgba(37, 53, 110, 0.796);
+    padding: 2rem;
+    backdrop-filter: blur(10px);
+    position: static;
+}
 
 nav {
     display: flex;
@@ -24,12 +38,6 @@ nav {
 
 a img {
     height: 3rem;
-}
-
-header {
-    background-color: #25356ecb;
-    padding: 2rem;
-    backdrop-filter: blur(10px);
 }
 
 ul {
@@ -48,25 +56,77 @@ a {
 }
 
 
-/* MAIN */
+/* HOMEPAGE */
 
-main {
+.section-container {
+    overflow: auto;
+    min-height: 80vh;
     padding: 2rem;
-    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
 }
 
-
-/* FOOTER */
-
-footer {
-    background-color: #25356ecb;
-    padding: 2rem;
-    backdrop-filter: blur(10px);
+article {
     position: relative;
+    cursor: pointer;
+}
+
+article img {
+    height: 20rem;
+    object-fit: cover;
+    width: 15rem;
+    border-radius: 7px;
+    transition: transform 0.3s ease;
+}
+
+article .infos {
+    background-color: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.7rem;
+    border-radius: 5px;
+}
+
+article .infos footer {
+    position: absolute;
     bottom: 0;
+    background-color: rgba(37, 53, 110, 0.796);
+    padding: 1rem;
+    backdrop-filter: blur(10px);
     width: 100%;
     display: flex;
+    align-items: center;
     justify-content: center;
+    border-radius: 0 0 5px 5px;
+}
+
+article:hover .infos {
+    display: flex;
+    opacity: 1;
+}
+
+article:focus-within .infos {
+    display: flex;
+    opacity: 1;
+}
+
+article .infos a i {
+    border: 2px solid white;
+    /* padding: 0.5rem; */
+    border-radius: 50%;
+    height: 3rem;
+    width: 3rem;
+    display: flex;
+    align-items: center;
     justify-content: center;
 }
 

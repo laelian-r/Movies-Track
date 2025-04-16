@@ -1,9 +1,9 @@
 <?php
 namespace MoviesTrack\Models;
 
-use MoviesTrack\Models\Home;
-/** Class HomeManager **/
-class HomeManager {
+use MoviesTrack\Models\Catalog;
+/** Class CatalogManager **/
+class CatalogManager {
 
     private $bdd;
     
@@ -18,7 +18,7 @@ class HomeManager {
 
     public function all() {
         $stmt = $this->bdd->query('SELECT * FROM films');
-        $movies = $stmt->fetchAll(\PDO::FETCH_CLASS, "MoviesTrack\Models\Home");
-        return $movies;
+
+        return $stmt->fetchAll(\PDO::FETCH_CLASS, "MoviesTrack\Models\Catalog");
     }
 }
