@@ -18,6 +18,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
+    min-height: 100vh;
 }
 
 
@@ -27,7 +28,9 @@ header {
     background-color: rgba(37, 53, 110, 0.796);
     padding: 2rem;
     backdrop-filter: blur(10px);
-    position: static;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
 }
 
 nav {
@@ -66,6 +69,7 @@ a {
     flex-direction: column;
     gap: 2rem;
     align-items: center;
+    padding-top: 10rem;
 }
 
 article {
@@ -82,7 +86,7 @@ article img {
 }
 
 article .infos {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(25, 25, 25, 0.664);
     position: absolute;
     top: 0;
     height: 100%;
@@ -112,6 +116,7 @@ article .infos footer {
 article:hover .infos {
     display: flex;
     opacity: 1;
+    transition: 0.5s;
 }
 
 article:focus-within .infos {
@@ -155,4 +160,22 @@ article .infos a i {
     text-decoration: underline;
     color: violet;
     text-underline-offset: 0.2rem;
+}
+
+
+/* RESPONSIVE */
+
+@media (min-width: 1025px) {
+    .section-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2rem;
+        height: 100vh;
+    }
+
+    article img {
+        height: 25rem;
+        width: 20rem;
+    }
 }

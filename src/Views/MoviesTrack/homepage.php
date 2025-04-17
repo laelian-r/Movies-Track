@@ -1,6 +1,6 @@
 <?php
 ob_start();
-$title = "Homepage";
+$title = "Accueil";
 ?>
 
 <div class="bg">

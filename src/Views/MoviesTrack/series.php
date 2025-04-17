@@ -1,9 +1,11 @@
 <?php
 ob_start();
-$title = "Homepage";
+$title = "Séries";
 ?>
 
-    <h1>Séries</h1>
+    <div class="bg">
+        <h1>Séries</h1>
+    </div>
 
 <?php
 $content = ob_get_clean();
