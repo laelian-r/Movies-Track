@@ -9,6 +9,7 @@ class Home {
     public $titre;
     public $description;
     public $date;
+    public $id_categorie;
 
     // Getters
     public function getIdFilm() {
@@ -35,6 +36,10 @@ class Home {
         return $this->date;
     }
 
+    public function getIdCategorie() {
+        return $this->id_categorie;
+    }
+
 
     public function setIdFilm(Int $id_film) {
         $this->id_film = $id_film;
@@ -58,5 +63,9 @@ class Home {
 
     public function setDate(Date $date) {
         $this->date = $date;
+    }
+
+    public function setIdCategorie(Int $id_categorie) {
+        $this->id_categorie = $id_categorie;
     }
 }

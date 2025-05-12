@@ -1,6 +1,9 @@
 <?php
 ob_start();
-$title = "Accueil";
+$title = "Movies Track";
+$homeActive = "active";
+$filmsActive = "";
+$deriesActive = "";
 ?>
 
 <div class="bg">

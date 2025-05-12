@@ -19,21 +19,28 @@
 <body>
     <header>
         <nav>
-            <a href="/"><img src="./assets/images/logo 4.png" alt=""></a>
+            <div class="nav-container">
+                <a href="/"><img src="./assets/images/logo 5.png" alt="Logo"></a>
 
-            <ul>
-                <li>
-                    <a href="/">Home</a>
-                </li>
+                <ul>
+                    <li>
+                        <a href="/" class="<?= $homeActive; ?>">Home</a>
+                    </li>
 
-                <li>
-                    <a href="/films">Films</a>
-                </li>
+                    <li>
+                        <a href="/films" class="<?= $filmsActive; ?>">Films</a>
+                    </li>
 
-                <li>
-                    <a href="/series">Series</a>
-                </li>
-            </ul>
+                    <li>
+                        <a href="/series" class="<?= $deriesActive; ?>">Series</a>
+                    </li>
+                </ul>
+            </div>
+            
+
+            <button>
+                <i class="fa-solid fa-bars"></i>
+            </button>
         </nav>
     </header>
 

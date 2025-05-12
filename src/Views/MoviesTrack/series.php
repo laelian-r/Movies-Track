@@ -1,6 +1,11 @@
 <?php
 ob_start();
-$title = "Séries";
+$title = "Séries | Movies Track";
+
+// Set active class for the navigation menu items
+$homeActive = "";
+$filmsActive = "";
+$deriesActive = "active";
 ?>
 
     <div class="bg">
