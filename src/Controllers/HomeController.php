@@ -12,7 +12,8 @@ class HomeController {
     }
 
     public function index() {
-        $movies = $this->manager->all();
+        $movies = $this->manager->films();
+        $series = $this->manager->series();
         require VIEWS . 'MoviesTrack/homepage.php';
     }
 }

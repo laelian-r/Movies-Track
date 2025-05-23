@@ -16,9 +16,15 @@ class CatalogManager {
         return $this->bdd;
     }
 
-    public function all() {
-        $stmt = $this->bdd->query('SELECT * FROM films');
+    public function films() {
+        $stmt = $this->bdd->query('SELECT * FROM films WHERE id_categorie = 1');
+        $movies = $stmt->fetchAll(\PDO::FETCH_CLASS, "MoviesTrack\Models\Home");
+        return $movies;
+    }
 
-        return $stmt->fetchAll(\PDO::FETCH_CLASS, "MoviesTrack\Models\Catalog");
+    public function series() {
+        $stmt = $this->bdd->query('SELECT * FROM films WHERE id_categorie = 2');
+        $series = $stmt->fetchAll(\PDO::FETCH_CLASS, "MoviesTrack\Models\Home");
+        return $series;
     }
 }

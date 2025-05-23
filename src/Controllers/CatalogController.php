@@ -12,10 +12,12 @@ class CatalogController {
     }
 
     public function movies() {
+        $movies = $this->manager->films();
         require VIEWS . 'MoviesTrack/films.php';
     }
     
     public function series() {
+        $series = $this->manager->series();
         require VIEWS . 'MoviesTrack/series.php';
     }
 }

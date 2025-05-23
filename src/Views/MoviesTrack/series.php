@@ -9,7 +9,25 @@ $deriesActive = "active";
 ?>
 
     <div class="bg">
-        <h1>Séries</h1>
+        <section class="section-container">
+        <?php
+        foreach ($series as $serie) :
+        ?>
+            <article>
+                <img src="<?= $serie->image; ?>" alt="">
+                
+                <div class="infos">
+                    <a href=""><i class="fa-solid fa-play"></i></a>
+
+                    <footer>
+                        <h2><?= $serie->titre; ?></h2>
+                    </footer>
+                </div>
+            </article>
+        <?php
+        endforeach;
+        ?>
+        </section>
     </div>
 
 <?php

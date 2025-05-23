@@ -19,6 +19,11 @@ body {
     background-size: cover;
     background-attachment: fixed;
     min-height: 100vh;
+
+    padding: 10rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
 }
 
 
@@ -92,13 +97,11 @@ button {
 
 .section-container {
     overflow: auto;
-    min-height: 80vh;
-    padding: 2rem;
+    max-height: 80vh;
     display: flex;
     flex-direction: column;
     gap: 2rem;
     align-items: center;
-    padding-top: 10rem;
 }
 
 article {
@@ -107,7 +110,7 @@ article {
 }
 
 article img {
-    height: 20rem;
+    height: 100%;
     object-fit: cover;
     width: 15rem;
     border-radius: 7px;
@@ -210,7 +213,7 @@ article .infos a i {
         justify-content: start;
         align-items: start;
         gap: 2rem;
-        height: 100vh;
+        /* height: 100vh; */
     }
 
     article img {

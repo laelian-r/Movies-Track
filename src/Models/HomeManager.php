@@ -16,8 +16,14 @@ class HomeManager {
         return $this->bdd;
     }
 
-    public function all() {
-        $stmt = $this->bdd->query('SELECT * FROM films');
+    public function films() {
+        $stmt = $this->bdd->query('SELECT * FROM films WHERE id_categorie = 1');
+        $movies = $stmt->fetchAll(\PDO::FETCH_CLASS, "MoviesTrack\Models\Home");
+        return $movies;
+    }
+
+    public function series() {
+        $stmt = $this->bdd->query('SELECT * FROM films WHERE id_categorie = 2');
         $movies = $stmt->fetchAll(\PDO::FETCH_CLASS, "MoviesTrack\Models\Home");
         return $movies;
     }
