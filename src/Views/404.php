@@ -1,9 +1,9 @@
-<?php
+<!-- <?php
 ob_start();
 
 $title = "Erreur 404";
 
-?>
+?> -->
 
 <section class="error">
     <h1>Erreur 404</h1>

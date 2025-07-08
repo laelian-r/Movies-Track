@@ -7,8 +7,8 @@ $deriesActive = "";
 ?>
 
 <div class="bg">
+    <h2>FIlms</h2>
     <section class="section-container">
-        <h1>FIlms</h1>
         <?php
         foreach ($movies as $movie) :
         ?>
@@ -28,19 +28,19 @@ $deriesActive = "";
         ?>
     </section>
 
+    <h2>Series</h2>
     <section class="section-container">
-        <h1>Series</h1>
         <?php
         foreach ($series as $serie) :
         ?>
         <article>
-            <img src="<?= $serie->image; ?>" alt="">
+            <img src="<?= $serie->image_serie; ?>" alt="<?= $serie->nom_serie; ?>">
                 
             <div class="infos">
                 <a href=""><i class="fa-solid fa-play"></i></a>
 
                 <footer>
-                    <h2><?= $serie->titre; ?></h2>
+                    <h2><?= $serie->nom_serie; ?></h2>
                 </footer>
             </div>
         </article>

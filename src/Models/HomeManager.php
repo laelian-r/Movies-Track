@@ -23,8 +23,8 @@ class HomeManager {
     }
 
     public function series() {
-        $stmt = $this->bdd->query('SELECT * FROM films WHERE id_categorie = 2');
-        $movies = $stmt->fetchAll(\PDO::FETCH_CLASS, "MoviesTrack\Models\Home");
-        return $movies;
+        $stmt = $this->bdd->query('SELECT * FROM series');
+        $series = $stmt->fetchAll(\PDO::FETCH_CLASS, "MoviesTrack\Models\Series");
+        return $series;
     }
 }

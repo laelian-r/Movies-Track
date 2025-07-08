@@ -1,26 +1,23 @@
 <?php
 ob_start();
 $title = "Séries | Movies Track";
-
-// Set active class for the navigation menu items
 $homeActive = "";
 $filmsActive = "";
 $deriesActive = "active";
 ?>
-
     <div class="bg">
         <section class="section-container">
         <?php
         foreach ($series as $serie) :
         ?>
             <article>
-                <img src="<?= $serie->image; ?>" alt="">
+                <img src="<?= $serie->image_serie; ?>" alt="">
                 
                 <div class="infos">
                     <a href=""><i class="fa-solid fa-play"></i></a>
 
                     <footer>
-                        <h2><?= $serie->titre; ?></h2>
+                        <h2><?= $serie->nom_serie; ?></h2>
                     </footer>
                 </div>
             </article>
